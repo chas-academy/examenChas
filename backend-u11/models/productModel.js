@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const reviewSchema = new mongoose.Schema(
   {
@@ -11,52 +11,55 @@ const reviewSchema = new mongoose.Schema(
   }
 );
 
-const productSchema = new mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: "User",
+const productSchema = new mongoose.Schema(
+  {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "User",
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+    brand: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    reviews: [reviewSchema],
+    rating: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    numReviews: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    price: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    countInStock: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
   },
-  name: {
-    type: String,
-    required: true,
-  },
-  image: {
-    type: String,
-    required: true,
-  },
-  brand: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-  reviews: [reviewSchema],
-  rating: {
-    type: Number,
-    required: true,
-    default: 0,
-  },
-  numReviews: {
-    type: Number,
-    required: true,
-    default: 0,
-  },
-  price: {
-    type: Number,
-    required: true,
-    default: 0,
-  },
-  countInStock: {
-    type: Number,
-    required: true,
-    default: 0,
-  },
-
-  timestamps: true,
-});
+  {
+    timestamps: true,
+  }
+);
 
 const Product = new mongoose.model("Product", productSchema);
 
