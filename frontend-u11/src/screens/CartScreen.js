@@ -8,8 +8,6 @@ import {
   Form,
   Button,
   Card,
-  ListGroupItem,
-  Accordion,
 } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
@@ -27,7 +25,7 @@ const CartScreen = (location) => {
   };
 
   const checkoutHandler = () => {
-    navigate("/login=redirect=shipping");
+    navigate("/shipping");
   };
 
   return (

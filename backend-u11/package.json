@@ -1,12 +1,12 @@
 {
-  "name": "u11",
+  "namnp": "u11",
   "version": "1.0.0",
   "description": "webshop Kiosk",
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node backend-u11/server",
-    "server": "nodemon backend-u11/server",
+    "start": "node server",
+    "server": "nodemon server",
     "client": "npm start --prefix frontend-u11",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend-u11/seeder",
