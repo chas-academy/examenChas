@@ -250,6 +250,7 @@ export const deleteUser = (id) => async (dispatch, getState) => {
     dispatch({
       type: USER_DELETE_SUCCESS,
     });
+    dispatch(listUsers());
   } catch (error) {
     const message =
       error.response && error.response.data.message
