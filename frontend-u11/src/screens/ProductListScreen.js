@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import { Table, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -37,10 +37,6 @@ const ProductListScreen = () => {
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
-
-  // useEffect(() => {
-  //   dispatch () listProducts();
-  // }, []);
 
   useEffect(() => {
     dispatch({ type: PRODUCT_CREATE_RESET });

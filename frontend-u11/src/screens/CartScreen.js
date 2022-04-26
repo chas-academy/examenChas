@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useParams, Navigate, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import {
   Row,
   Col,
