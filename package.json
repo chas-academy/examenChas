@@ -5,12 +5,13 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server",
+    "start": "node backend-u11/server",
     "server": "nodemon server",
     "client": "npm start --prefix frontend-u11",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend-u11/seeder",
-    "data:delete": "node backend-u11/seeder -d"
+    "data:delete": "node backend-u11/seeder -d",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend-u11 && npm run build --prefix frontend"
   },
   "repository": {
     "type": "git",
@@ -25,11 +26,12 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
-    "dotenv": "^11.0.0",
+    "dotenv": "^16.0.1",
     "express": "^4.17.2",
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.6",
+    "multer": "^1.4.4",
     "react-router-dom": "^6.2.1"
   },
   "devDependencies": {

@@ -32,12 +32,14 @@ const UserEditScreen = ({}) => {
 
   useEffect(() => {
     // BUG todo does not populate form fields with user being edited
+    console.log(user);
 
     if (successUpdate) {
       dispatch({ type: USER_UPDATE_RESET });
       navigate("/admin/userlist");
     } else {
       if (!user || !user.name || user._id !== userId) {
+        console.log("test");
         dispatch(getUserDetails(userId));
       } else {
         setName(user.name);
@@ -51,7 +53,6 @@ const UserEditScreen = ({}) => {
     e.preventDefault();
     dispatch(updateUser({ _id: userId, name, email, isAdmin }));
   };
-
   return (
     <>
       <Link to="/admin/userlist" className="btn btn-light my-3">

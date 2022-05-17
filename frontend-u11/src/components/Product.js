@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import Rating from "./Rating";
-
+// remove rating function todo
 const Product = ({ product }) => {
   return (
     <Card className="my-3 p-3 rounded">
@@ -14,12 +14,7 @@ const Product = ({ product }) => {
           <Card.Title as="div" />
           <strong>{product.name}</strong>
         </Link>
-        <Card.Text as="div">
-          <Rating
-            value={product.rating}
-            text={`${product.numReviews} reviews`}
-          />
-        </Card.Text>
+        <Card.Text as="div"></Card.Text>
         <Card.Text as="h3">${product.price}</Card.Text>
       </Card.Body>
     </Card>

@@ -50,7 +50,7 @@ const ProfileScreen = () => {
       dispatch(updateUserProfile({ id: user._id, name, email, password }));
     }
   };
-
+  // todo does not populate fields
   return (
     <Row>
       <Col md={3}>

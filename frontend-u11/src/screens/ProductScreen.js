@@ -12,8 +12,9 @@ import {
 } from "react-bootstrap";
 import Rating from "../components/Rating";
 import Message from "../components/Message";
-import Loader from "../components/Loader";
-import { listProductdetails } from "../actions/productActions";
+import Loader from "../components/Loader.js";
+
+import { listProductDetails } from "../actions/productActions";
 import { addToCart } from "../actions/cartActions";
 
 const ProductScreen = (history) => {
@@ -26,7 +27,7 @@ const ProductScreen = (history) => {
   const { loading, error, product } = productDetails;
 
   useEffect(() => {
-    dispatch(listProductdetails(params.id));
+    dispatch(listProductDetails(params.id));
   }, [params.id]);
 
   const addToCartHandler = () => {
